@@ -44,7 +44,7 @@ The implementation uses the Jacobian Transpose approach:
 3. Update joint angles using:
    $$\Delta \theta = \alpha J^T \mathbf{e}$$
 
-Where:
+where:
 - $J$ maps joint velocity to end-effector velocity.
 - $J^T$ provides a stable gradient-like direction.
 - $\alpha$ is a step size parameter.
@@ -52,8 +52,6 @@ Where:
 The system iteratively updates joint angles until the positional error falls below a tolerance threshold.
 
 ---
-
-## Application in Virtual Reality
 
 In the VR system:
 
