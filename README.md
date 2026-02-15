@@ -36,24 +36,18 @@ Because this mapping is nonlinear and often over-parameterized, a closed-form so
 The implementation uses the Jacobian Transpose approach:
 
 1. Compute the positional error:
-   $$
-   \mathbf{e} = \mathbf{x}_{target} - \mathbf{x}_{current}
-   $$
+   $$\mathbf{e} = \mathbf{x}_{target} - \mathbf{x}_{current}$$
 
 2. Compute the Jacobian matrix:
-   $$
-   J = \frac{\partial f}{\partial \theta}
-   $$
+   $$J = \frac{\partial f}{\partial \theta}$$
 
 3. Update joint angles using:
-   $$
-   \Delta \theta = \alpha J^T \mathbf{e}
-   $$
+   $$\Delta \theta = \alpha J^T \mathbf{e}$$
 
 Where:
-- $$ J $$ maps joint velocity to end-effector velocity.
-- $$ J^T $$ provides a stable gradient-like direction.
-- $$ \alpha $$ is a step size parameter.
+- $J$ maps joint velocity to end-effector velocity.
+- $J^T$ provides a stable gradient-like direction.
+- $\alpha$ is a step size parameter.
 
 The system iteratively updates joint angles until the positional error falls below a tolerance threshold.
 
