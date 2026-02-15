@@ -16,14 +16,10 @@ This is the inverse of forward kinematics, where joint angles are known and the 
 
 Mathematically:
 
-- Let joint angles be  
-  $$
-  \theta \in \mathbb{R}^n
-  $$
-- Let the hand position be  
-  $$
-  \mathbf{x} = f(\theta)
-  $$
+Let joint angles be  
+  $$\theta \in \mathbb{R}^n$$
+Let the hand position be  
+  $$\mathbf{x} = f(\theta) $$
 
 Inverse kinematics solves for:
 
