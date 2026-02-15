@@ -8,8 +8,6 @@ This was later used for intern work at Creativex Consulting Pte Ltd in 2022. Fin
 
 ---
 
-## What is Inverse Kinematics?
-
 In computer graphics and robotics, inverse kinematics (IK) solves the problem:
 
 > Given a desired end-effector position (e.g., the hand in 3D space), determine the joint angles required to reach that position.
@@ -19,13 +17,13 @@ This is the inverse of forward kinematics, where joint angles are known and the 
 Mathematically:
 
 - Let joint angles be  
-  \[
+  $
   \theta \in \mathbb{R}^n
-  \]
+  $
 - Let the hand position be  
-  \[
+  $
   \mathbf{x} = f(\theta)
-  \]
+  $
 
 Inverse kinematics solves for:
 
