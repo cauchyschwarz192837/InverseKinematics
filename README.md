@@ -1,4 +1,4 @@
-# Human Arm Inverse Kinematics in C++ and OpenGL for Virtual Reality App in Oculus Quest 2 (Test Reference)
+# Inverse Kinematics in C++ and OpenGL for Virtual Reality App
 
 Implemention of inverse kinematics (IK) on 3 joints with 9 degrees of freedom using the numerical Jacobian Transpose method using C++ and OpenGL for rendering visualizations. 
 
