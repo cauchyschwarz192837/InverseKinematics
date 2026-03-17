@@ -8,26 +8,20 @@ Final code cannot be shared, but a short video demo can be found here (click the
 
 ---
 
-In computer graphics and robotics, inverse kinematics (IK) solves the problem:
-
-> Given a desired end-effector position (e.g., the hand in 3D space), determine the joint angles required to reach that position.
-
-This is the inverse of forward kinematics, where joint angles are known and the hand position is computed.
-
-Mathematically:
+Inverse kinematics (IK) solves the problem: Given a desired end-effector position (e.g., the hand in 3D space), determine the joint angles required to reach that position.
 
 Let joint angles be  
   $$\theta \in \mathbb{R}^n$$
 Let the hand position be  
   $$\mathbf{x} = f(\theta) $$
 
-Inverse kinematics solves for:
+We also solve for:
 
 $$
 \theta \quad \text{such that} \quad f(\theta) = \mathbf{x}_{target}
 $$
 
-Because this mapping is nonlinear and often over-parameterized, a closed-form solution is not always feasible. Instead, numerical methods are used.
+Because this mapping is nonlinear and often over-parameterised, we use numerical methods are used.
 
 ---
 
@@ -36,7 +30,7 @@ Because this mapping is nonlinear and often over-parameterized, a closed-form so
 The implementation uses the Jacobian Transpose approach:
 
 1. Compute the positional error:
-   $$\mathbf{e} = \mathbf{x}_{target} - \mathbf{x}_{current}$$
+   $$e = x_{target} - x_{current}$$
 
 2. Compute the Jacobian matrix:
    $$J = \frac{\partial f}{\partial \theta}$$
@@ -44,20 +38,6 @@ The implementation uses the Jacobian Transpose approach:
 3. Update joint angles using:
    $$\Delta \theta = \alpha J^T \mathbf{e}$$
 
-where:
-- $J$ maps joint velocity to end-effector velocity.
-- $J^T$ provides a stable gradient-like direction.
-- $\alpha$ is a step size parameter.
+where $J$ maps joint velocity to end-effector velocity, $J^T$ provides a stable gradient-like direction, $\alpha$ is a step size parameter.
 
-The system iteratively updates joint angles until the positional error falls below a tolerance threshold.
-
----
-
-In the VR system:
-
-- Hand position is tracked via motion controllers.
-- The IK solver computes arm joint angles in real time.
-- Joint velocities are derived using Jacobian-based mapping.
-- Constraints ensure physically plausible arm motion.
-
-This allows the avatar's arm to move naturally and stably, even during rapid motion.
+The system iteratively updates joint angles until the positional error falls below a tolerance threshold. Hand position is tracked via motion controllers and the IK solver computes arm joint angles in real time. Constraints ensure physically plausible arm motion.
